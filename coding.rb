@@ -46,7 +46,7 @@ N.times do
   puts (winning_number & select_number).size
 end
 
-タクシー料金計算
+#タクシー料金計算
 line = gets.split(' ').map(&:to_i)
 N = line[0]
 X = line[1]
