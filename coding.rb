@@ -46,3 +46,37 @@ N.times do
   puts (winning_number & select_number).size
 end
 
+タクシー料金計算
+line = gets.split(' ').map(&:to_i)
+N = line[0]
+X = line[1]
+minCharge = 0
+maxCharge = 0
+taxi_info  = []
+N.times do
+  taxi_info = gets.chomp.split(" ").map(&:to_i)
+  defaultDistance = taxi_info[0]
+  defaultCharge = taxi_info[1]
+  additionDistance = taxi_info[2]
+  additionCharge = taxi_info[3]
+  additionResult = 0
+  chargeResult = 0
+    if X >= defaultDistance
+      remainDistance = X - defaultDistance
+      additionResult = taxi_info[3]*(remainDistance / taxi_info[2] + 1)
+    end
+    chargeResult = defaultCharge + additionResult
+    if minCharge == 0
+        minCharge = chargeResult
+    end
+    if minCharge > chargeResult
+        minCharge = chargeResult
+    end
+    if maxCharge == 0
+        maxCharge = chargeResult
+    end
+    if maxCharge < chargeResult
+        maxCharge = chargeResult
+    end
+end
+puts (minCharge.to_s + ' ' + maxCharge.to_s)
