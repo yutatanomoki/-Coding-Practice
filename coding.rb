@@ -47,6 +47,7 @@ N.times do
 end
 
 #タクシー料金計算
+#最安値、最高値算出
 line = gets.split(' ').map(&:to_i)
 N = line[0]
 X = line[1]
