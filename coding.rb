@@ -94,3 +94,13 @@ input_line.times do
   count += array.count("#")
 end
 puts count
+
+
+#カード並べ
+#4つの数字から二つを並べ、二桁の数字同士を足した最大値を求める
+arr = gets.split(' ').map(&:to_i)
+#配列を降順に
+arr.sort!.reverse!
+numResult = arr[0]*10 + arr[2] + arr[1]*10 + arr[3]
+
+puts numResult
