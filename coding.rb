@@ -81,3 +81,16 @@ N.times do
     end
 end
 puts (minCharge.to_s + ' ' + maxCharge.to_s)
+
+#爆弾ゲーム
+input_line = gets.to_i
+count = 0
+input_line.times do
+  array = gets.chomp.split('')
+  # '#'が含まれていたらその行全てを'#'に置換
+  if array.include?("#")
+      array.map!{|x| x=="." ? "#" : x}
+  end
+  count += array.count("#")
+end
+puts count
