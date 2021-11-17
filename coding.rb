@@ -104,3 +104,27 @@ arr.sort!.reverse!
 numResult = arr[0]*10 + arr[2] + arr[1]*10 + arr[3]
 
 puts numResult
+
+#給与計算プログラム
+hourly_wage = gets.split(' ').map(&:to_i)
+N = gets.to_i
+times = []
+while time = gets
+    times << time.chomp.split(' ').map(&:to_i)
+end
+sum = 0
+(0..N-1).each do |i|
+    (times[i][0]+1..times[i][1]).each do |t|
+
+        if t<=9
+            sum += hourly_wage[2]
+        elsif t<=17
+            sum+= hourly_wage[0]
+        elsif t<=22
+            sum+= hourly_wage[1]
+        else
+            sum+= hourly_wage[2]
+        end
+    end
+end
+
