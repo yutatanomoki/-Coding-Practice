@@ -127,4 +127,4 @@ sum = 0
         end
     end
 end
-
+puts sum
