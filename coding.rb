@@ -128,3 +128,16 @@ sum = 0
     end
 end
 puts sum
+
+#暴風域問題
+storm_info = gets.split(' ').map(&:to_i)
+N = gets.to_i
+
+N.times do
+  user = gets.chomp.split(" ").map(&:to_i)
+  if storm_info[2]**2 <= (user[0] - storm_info[0])**2 + (user[1] - storm_info[1])**2 && storm_info[3]**2 >= (user[0] - storm_info[0])**2 + (user[1] - storm_info[1])**2
+      puts 'yes'
+  else
+      puts 'no'
+  end
+end
