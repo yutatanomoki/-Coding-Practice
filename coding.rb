@@ -141,3 +141,40 @@ N.times do
       puts 'no'
   end
 end
+
+#多重パス回し
+N = gets.to_i
+balls = []
+N.times do
+  balls << gets.to_i
+end
+
+result_user_ball = 0
+result_target_ball = 0
+
+M = gets.to_i
+M.times do
+  actions = gets.chomp.split(" ").map(&:to_i)
+  user_number = actions[0]
+  target_number = actions[1]
+  number = actions[2]
+  user_ball = balls[user_number - 1]
+  target_ball = balls[target_number - 1]
+  if balls[user_number - 1] - number > 0
+      result_user_ball = balls[user_number - 1] - number
+      result_target_ball = balls[target_number - 1] + number
+      balls[user_number - 1] =  result_user_ball
+      balls[target_number - 1] =  result_target_ball
+  else
+      result_user_ball = 0
+      result_target_ball = balls[target_number - 1] + balls[user_number - 1]
+      balls[user_number - 1] =  result_user_ball
+      balls[target_number - 1] =  result_target_ball
+  end
+end
+
+puts balls
+
+
+
+
