@@ -64,3 +64,15 @@ letters.each do |letter|
     end
     puts ""
 end
+
+# 複数行テキストに行番号を追加する
+text = ["吾輩は猫である",
+        "名前はまだ無い",
+        "どこで生まれたか",
+        "とんと見当がつかぬ"]
+#ここに、行番号を表示するコードを記述する
+text.each_with_index do |line ,i|
+    print "#{i + 1}:"
+	print line
+	puts ""
+end
