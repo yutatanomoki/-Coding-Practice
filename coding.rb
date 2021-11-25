@@ -175,12 +175,19 @@ end
 
 puts balls
 
+#最適な人参
+
+#標準入力から基準値を取得
 line = gets.split(' ').map(&:to_i)
 N = line[0]
 S = line[1]
 p = line[2]
+
+#初期値代入
 result = 0
 max_weight = 0
+
+#比較値標準入力をループで取得
 (1..N).each do |i|
     carrot_data = gets.split(' ').map(&:to_i)
     weight = carrot_data[0]
