@@ -175,6 +175,27 @@ end
 
 puts balls
 
+line = gets.split(' ').map(&:to_i)
+N = line[0]
+S = line[1]
+p = line[2]
+result = 0
+max_weight = 0
+(1..N).each do |i|
+    carrot_data = gets.split(' ').map(&:to_i)
+    weight = carrot_data[0]
+    suger_data = carrot_data[1]
+    if suger_data >= S - p && suger_data <= S + p
+        if weight > max_weight 
+            result = i
+            max_weight = weight
+        end
+    end
+end
 
+if result == 0
+    result = "not found"
+end
 
+puts result
 
