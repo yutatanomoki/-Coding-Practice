@@ -141,3 +141,8 @@ team.each do |line|
     end
     puts "</tr>"
 end
+
+# ハッシュの整列
+#ハッシュの値でソートして整列させる
+items = {"イージスシールド" => 40, "ウィンドスピア" =>12, "アースブレイカー" =>99}
+p items.sort_by {|k, v| v }.to_h
