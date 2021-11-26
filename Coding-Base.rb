@@ -146,3 +146,20 @@ end
 #ハッシュの値でソートして整列させる
 items = {"イージスシールド" => 40, "ウィンドスピア" =>12, "アースブレイカー" =>99}
 p items.sort_by {|k, v| v }.to_h
+
+#バズの検出
+N, M, T, K= gets.split.map(&:to_i)
+sum = 0
+data = []
+
+(1..M).each do |i|
+    data.push(gets.split.map(&:to_i))
+    sum = data.transpose.map { |n| n.inject(:+) }
+    sum.each do |result|
+        if result > K
+            print "yes "
+            puts i
+            break
+        end
+    end
+end
