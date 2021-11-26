@@ -147,7 +147,7 @@ end
 items = {"イージスシールド" => 40, "ウィンドスピア" =>12, "アースブレイカー" =>99}
 p items.sort_by {|k, v| v }.to_h
 
-#バズの検出
+#バズの検出(未完成)
 N, M, T, K= gets.split.map(&:to_i)
 sum = 0
 data = []
