@@ -163,3 +163,11 @@ data = []
         end
     end
 end
+
+#配列の足し合わせ
+array = [4, 0, 5, -1, 3, 10, 6, -8]
+ans = 0
+
+array.each { |element| ans += element if element >= 5 }
+
+puts ans
