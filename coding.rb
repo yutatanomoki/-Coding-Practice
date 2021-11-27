@@ -206,3 +206,14 @@ end
 
 puts result
 
+#5以上の数字の足し合わせ
+loop = gets.chomp.to_i
+ans = 0
+
+(1..loop).each do |i|
+  num = gets.chomp.to_i
+
+  ans = ans + num if num >= 5
+end
+
+puts ans
