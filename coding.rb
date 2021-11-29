@@ -217,3 +217,40 @@ ans = 0
 end
 
 puts ans
+
+#C034:先生の宿題
+a,op,b,equal,c = gets.split(' ').map(&:to_s)
+if op == "+"
+if c =="x"
+    result = (a.to_i + b.to_i)
+    puts result
+end
+
+if b == "x"
+    result = (c.to_i - a.to_i)
+    puts result
+end
+if a == "x"
+    result = (c.to_i - b.to_i)
+    puts result
+end
+
+end
+
+if op == "-"
+if c =="x"
+    result = (a.to_i - b.to_i)
+    puts result
+end
+
+if b == "x"
+    result = (a.to_i - c.to_i)
+    puts result
+end
+if a == "x"
+    result = (b.to_i + c.to_i)
+    puts result
+end
+
+end
+
