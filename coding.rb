@@ -253,4 +253,36 @@ if a == "x"
 end
 
 end
+    
+# 自分の得意な言語で
+# Let's チャレンジ！！
+str = gets.chomp.split(" ").map(&:to_i)
+N = str[0]
+M = str[1]
+multiple = []
+string = []
+M.times do 
+    arr = gets.chomp.split(" ")
+    multiple << arr[0].to_i
+    string << arr[1]
+end
+
+hash = multiple.zip(string).to_h
+result = []
+(1..N).each do |i|
+    if hash.key?(i)
+        i.times do |h|
+            puts hash
+            hash.each do |k, v|
+             
+                result << hash[k] if h % k == 0
+                
+            end
+        end
+        
+    else
+        puts i
+    end
+end
+    
 
