@@ -299,5 +299,20 @@ end
 
 puts result
 
-    
+
+ハッシュに入れ込んで数字の順番に文字列出力
+
+num = gets.chomp.to_i
+array = {}
+
+(1..num).each do
+  line = gets.chomp.split(' ')
+  #ハッシュを作成 入力値例　A 3
+  array[line[1].to_i] = line[0]
+  puts array
+end
+#照準にソート
+array = array.sort
+#valueの出力
+array.each { |ele| puts ele[1] }
 
