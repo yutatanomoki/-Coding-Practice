@@ -316,3 +316,22 @@ array = array.sort
 #valueの出力
 array.each { |ele| puts ele[1] }
 
+num = gets.chomp.to_i
+array = {}
+
+(1..num).each do
+  values = gets.split(' ')
+  string = values[0]
+  points = values[1].to_i
+
+  if array[string]
+    current = array[string]
+    array[string] = current + points
+  else
+    array[string] = points
+  end
+end
+
+array = array.sort_by { |_string, points| -points }
+
+array.each { |string, points| puts "#{string} #{points}" }
