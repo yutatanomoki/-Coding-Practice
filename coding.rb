@@ -335,3 +335,38 @@ end
 array = array.sort_by { |_string, points| -points }
 
 array.each { |string, points| puts "#{string} #{points}" }
+
+
+# 観覧車
+
+str = gets.chomp.split(" ").map(&:to_i)
+N = str[0]
+M = str[1]
+number_of_peoples = []
+groups = []
+results = []
+answer = []
+
+N.times do
+    number_of_people << gets.chomp.to_i
+end
+
+M.times do
+    group << gets.chomp.to_i
+end
+
+groups.each do |i|
+    number_of_peoples.each do |h|
+        sum = i - h
+        if sum >= 0
+            result << h
+            i -= h
+        else 
+            result << i
+            break
+        end
+        
+    end
+end
+
+puts result
