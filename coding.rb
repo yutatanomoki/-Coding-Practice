@@ -342,31 +342,38 @@ array.each { |string, points| puts "#{string} #{points}" }
 str = gets.chomp.split(" ").map(&:to_i)
 N = str[0]
 M = str[1]
-number_of_peoples = []
-groups = []
-results = []
-answer = []
+limits = []
+peoples = []
+results = Array.new(N, 0)
 
 N.times do
-    number_of_people << gets.chomp.to_i
+    limits << gets.chomp.to_i
 end
 
 M.times do
-    group << gets.chomp.to_i
+    peoples << gets.chomp.to_i
 end
 
-groups.each do |i|
-    number_of_peoples.each do |h|
-        sum = i - h
-        if sum >= 0
-            result << h
-            i -= h
-        else 
-            result << i
-            break
+peoples.each do |people|
+    index = 0
+    is_break = false
+    loop do
+        limits.each_with_index do |limit, i|
+            next if i <= index
+            left = people - limit
+            if left >= 0
+                results[i] += limit
+                people -= limit
+            else 
+                results[i] += people
+                index = i + 1
+                is_break = true
+                break
+            end
         end
-        
+        break if is_break
     end
 end
 
-puts result
+puts results
+
